@@ -49,16 +49,16 @@ function App() {
           </Grid>
           <Grid item xs={7}>
             <Paper className={classes.logs}>
+              <ExpansionLogs logs={innerLogs} clearLogs={clearInnerLogs} />
+            </Paper>
+          </Grid>
+          <Grid item xs={5}>
+            <Paper className={classes.logs}>
               <ExpansionLogs
                 logs={outerLogs}
                 clearLogs={clearOuterLogs}
                 isOuter={true}
               />
-            </Paper>
-          </Grid>
-          <Grid item xs={5}>
-            <Paper className={classes.logs}>
-              <ExpansionLogs logs={innerLogs} clearLogs={clearInnerLogs} />
             </Paper>
           </Grid>
           <Grid item xs={12}>

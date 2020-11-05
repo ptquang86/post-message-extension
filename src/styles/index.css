@@ -28,3 +28,7 @@ body {
 .MuiButtonBase-root .MuiAccordionSummary-content.Mui-expanded {
     margin: 0;
 }
+
+#switchToEmbedded {
+    margin-top: 5px;
+}
