@@ -1,0 +1,21 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.border {
+    margin: 1px;
+    border: 1px solid #606060;
+    border-radius: 5px;
+}
+
+.embedded-gdc {
+    display: flex;
+    flex-direction: column;
+}
+
+.embedded-gdc iframe {
+    display: block;
+    height: 90vh;
+    width: 100%;
+    margin-top: 5px;
+}
