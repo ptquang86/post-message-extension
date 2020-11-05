@@ -13,5 +13,9 @@
   },
   "content_security_policy": "script-src 'self' 'sha256-5zlW7gZMsX/iPhz2Cmwp42DuoPqtI4bC5ho3H3OgHBA='; object-src 'self'",
   "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "notifications"
   ]
 }
