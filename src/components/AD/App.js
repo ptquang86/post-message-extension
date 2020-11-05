@@ -4,11 +4,11 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
-import EmbeddedGdc from "../EmbeddedGdc";
+// import EmbeddedGdc from "../EmbeddedGdc";
 import ExpansionLogs from "../ExpansionLogs";
 import Commands from "./Commands";
 import Theme from "../Theme";
-import { EMBEDDED_AD } from "./constant";
+// import { EMBEDDED_AD } from "./constant";
 import { useMessage } from "../../hooks/useMessage";
 
 const useStyles = makeStyles((theme) => ({
@@ -61,11 +61,11 @@ function App() {
               />
             </Paper>
           </Grid>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <Paper className={classes.paper}>
               <EmbeddedGdc appName="ad" id={EMBEDDED_AD} />
             </Paper>
-          </Grid>
+          </Grid> */}
         </Grid>
       </div>
     </Theme>
