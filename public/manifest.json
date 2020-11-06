@@ -5,6 +5,16 @@
   "description": "This extension is used to test Post Message api",
   "version": "0.0.1",
 
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["contentScript.js"],
+    "run_at": "document_end",
+    "all_frames": true
+  }],
   "devtools_page": "devtools.html",
 
   "icons": {
@@ -12,6 +22,7 @@
     "512": "logo512.png"
   },
   "permissions": [
+    "<all_urls>",
     "activeTab",
     "storage",
     "tabs",

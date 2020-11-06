@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { backgroundPageConnection } from "../utils/index";
 
 export const useMessage = () => {
   const [innerLogs, setInnerLogs] = useState([]);
@@ -16,21 +17,7 @@ export const useMessage = () => {
     ]);
   };
 
-  const handleReceiveMessage = (event) => {
-    if (!event || !event.data) {
-      return false;
-    }
-
-    let gdc;
-    if (typeof event.data === "string") {
-      try {
-        const data = JSON.parse(event.data);
-        gdc = data && data.gdc;
-      } catch (_) {}
-    } else {
-      gdc = event.data.gdc;
-    }
-
+  const handleReceiveMessage = ({ gdc }) => {
     if (gdc) {
       setInnerLogs((prevLogs) => [
         {
@@ -48,11 +35,13 @@ export const useMessage = () => {
   const clearOuterLogs = () => setOuterLogs([]);
 
   useEffect(() => {
-    window.addEventListener("message", handleReceiveMessage);
+    // window.addEventListener("message", handleReceiveMessage);
 
-    return function unhandleReceiveMessage() {
-      window.removeEventListener("message", handleReceiveMessage);
-    };
+    // return function unhandleReceiveMessage() {
+    //   window.removeEventListener("message", handleReceiveMessage);
+    // };
+
+    backgroundPageConnection.onMessage.addListener(handleReceiveMessage);
   }, []);
 
   return {
